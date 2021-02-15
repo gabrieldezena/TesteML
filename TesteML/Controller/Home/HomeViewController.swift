@@ -9,8 +9,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var searchController : UISearchController?
+    var searchController: UISearchController?
     let productCellId = "ProductCellId"
+    private lazy var business = HomeBusiness(delegate: self)
+
 
     lazy var homeView: HomeView = {
         let view = HomeView()
@@ -40,12 +42,12 @@ class HomeViewController: UIViewController {
     private func setupSearchBar() {
         searchController = UISearchController(searchResultsController: nil)
         searchController?.delegate = self
-        searchController?.searchResultsUpdater = self
 
         let scb = self.searchController?.searchBar
         scb?.tintColor = UIColor.white
         scb?.placeholder = "SEARCH"
         scb?.barTintColor = UIColor.white
+        scb?.delegate = self
 
         if let textfield = scb?.value(forKey: "searchField") as? UITextField {
             textfield.textColor = UIColor.green
@@ -68,8 +70,19 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UISearchControllerDelegate, UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        
+extension HomeViewController: UISearchControllerDelegate, UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        business.fetchProducts(product: searchBar.text ?? String())
     }
 }
+
+extension HomeViewController: HomeBusinessDelegate {
+    func successFetchProducts(products: ProductList) {
+        print(products)
+    }
+    
+    func abortWithError(error: Error) {
+        print(error)
+    }
+}
+

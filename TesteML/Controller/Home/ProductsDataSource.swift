@@ -18,6 +18,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         cell.title.text = "TESTEEEE"
+        cell.price.text = "R$ 99,90"
+        cell.shipping.text = "Frete Gratis"
+        cell.imageView?.image = UIImage(contentsOfFile: "teste")
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }

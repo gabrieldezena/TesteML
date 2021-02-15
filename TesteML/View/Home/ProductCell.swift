@@ -11,8 +11,24 @@ import UIKit
 class ProductCell: UITableViewCell {
 
     // MARK: - Views
+    
+    lazy var productImage: UIImageView = {
+        let image = UIImageView(frame: .zero)
+        image.backgroundColor = .green
+        return image
+    }()
 
     lazy var title: UILabel = {
+        let label = UILabel(frame: .zero)
+        return label
+    }()
+    
+    lazy var price: UILabel = {
+        let label = UILabel(frame: .zero)
+        return label
+    }()
+    
+    lazy var shipping: UILabel = {
         let label = UILabel(frame: .zero)
         return label
     }()
@@ -35,12 +51,40 @@ class ProductCell: UITableViewCell {
 
 extension ProductCell: CodeView {
     func buildViewHierarchy() {
+        addSubview(productImage)
         addSubview(title)
+        addSubview(price)
+        addSubview(shipping)
+        
     }
 
     func setupConstraints() {
+        
+        let grid = 8
+    
+        productImage.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(grid)
+            make.top.equalToSuperview().offset(grid)
+            make.height.width.equalTo(80)
+        }
+        
         title.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.left.equalTo(productImage.snp.right).offset(grid)
+            make.right.equalToSuperview()
+            make.top.equalTo(productImage.snp.top)
+        }
+        
+        price.snp.makeConstraints { make in
+            make.left.equalTo(productImage.snp.right).offset(grid)
+            make.right.equalToSuperview()
+            make.top.equalTo(title.snp.bottom).offset(grid)
+        }
+        
+        shipping.snp.makeConstraints { make in
+            make.left.equalTo(productImage.snp.right).offset(grid)
+            make.right.equalToSuperview()
+            make.top.equalTo(price.snp.bottom).offset(grid)
+            make.bottom.equalToSuperview().inset(grid)
         }
     }
 }
