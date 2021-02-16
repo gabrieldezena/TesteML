@@ -23,7 +23,8 @@ class HomeBusiness {
     }
     
     func fetchProducts(product: String) {
-        provider?.fetchProducts(product: product, completion: { result in
+        let productFormated = product.replacingOccurrences(of: " ", with: "%20")
+        provider?.fetchProducts(product: productFormated, completion: { result in
             switch result {
             case let .success(_, data):
                 guard let jsonData = data as? Data else { return }

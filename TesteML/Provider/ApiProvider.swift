@@ -22,14 +22,14 @@ protocol ApiProviderDelegate: AnyObject {
 class ApiProvider: ApiProviderDelegate {
 
     func fetchProducts(product: String, completion: @escaping CompletionCallBack) {
-
-        let request = AF.request("https://api.mercadolibre.com/sites/MLB/search?q=\(product)")
-
-        request.responseJSON { result in
-            if result.error != nil {
-                print("Error: \(result.error)")
-            } else {
-                completion(.success(nil, result.data))
+        let urlString = "https://api.mercadolibre.com/sites/MLB/search?q=\(product)"
+        if let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),let url = URL(string: encoded) {
+            AF.request(url).validate().responseJSON { (result) in
+                if result.error != nil {
+                    print("Error: \(result.error)")
+                } else {
+                    completion(.success(nil, result.data))
+                }
             }
         }
     }

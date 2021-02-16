@@ -9,10 +9,18 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    private lazy var business = HomeBusiness(delegate: self)
     var searchController: UISearchController?
     let productCellId = "ProductCellId"
-    private lazy var business = HomeBusiness(delegate: self)
 
+    var products: [ProductViewModel] = [] {
+        didSet {
+            homeView.productsTableView.reloadData()
+            homeView.productsTableView.layoutIfNeeded()
+            homeView.updateConstraints()
+
+        }
+    }
 
     lazy var homeView: HomeView = {
         let view = HomeView()
@@ -68,19 +76,30 @@ class HomeViewController: UIViewController {
         }
         definesPresentationContext = true
     }
+    
+    private func createProductViewModels(with products: ProductList) -> [ProductViewModel] {
+        var productList: [ProductViewModel] = []
+        for product in products.results {
+            productList.append(ProductViewModel(product: product))
+        }
+
+        return productList
+    }
 }
 
 extension HomeViewController: UISearchControllerDelegate, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchController?.dismiss(animated: true, completion: nil)
         business.fetchProducts(product: searchBar.text ?? String())
     }
 }
 
 extension HomeViewController: HomeBusinessDelegate {
     func successFetchProducts(products: ProductList) {
-        print(products)
+        let productsViewModal = createProductViewModels(with: products)
+        self.products = productsViewModal
     }
-    
+
     func abortWithError(error: Error) {
         print(error)
     }

@@ -8,19 +8,21 @@
 import UIKit
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 70
+        return products.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: productCellId, for: indexPath) as? ProductCell else {
             return UITableViewCell()
         }
         
-        cell.title.text = "TESTEEEE"
-        cell.price.text = "R$ 99,90"
-        cell.shipping.text = "Frete Gratis"
-        cell.imageView?.image = UIImage(contentsOfFile: "teste")
+        cell.title.text = products[indexPath.row].title
+        cell.price.text = products[indexPath.row].price
+        cell.shipping.text = products[indexPath.row].shipping
+        cell.productImage.downloaded(from: self.products[indexPath.row].thumbnail)
+
         return cell
     }
     

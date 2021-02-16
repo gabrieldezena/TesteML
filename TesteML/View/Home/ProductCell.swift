@@ -14,12 +14,13 @@ class ProductCell: UITableViewCell {
     
     lazy var productImage: UIImageView = {
         let image = UIImageView(frame: .zero)
-        image.backgroundColor = .green
+        image.contentMode = .scaleAspectFit
         return image
     }()
 
     lazy var title: UILabel = {
         let label = UILabel(frame: .zero)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -70,7 +71,7 @@ extension ProductCell: CodeView {
         
         title.snp.makeConstraints { make in
             make.left.equalTo(productImage.snp.right).offset(grid)
-            make.right.equalToSuperview()
+            make.right.equalToSuperview().inset(grid)
             make.top.equalTo(productImage.snp.top)
         }
         
