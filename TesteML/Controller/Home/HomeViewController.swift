@@ -83,8 +83,8 @@ class HomeViewController: UIViewController {
         definesPresentationContext = true
     }
 
-    func didSelect() {
-        coordinator?.go(to: .productDetail)
+    func didSelect(product: ProductViewModel) {
+        coordinator?.go(to: .productDetail(product: product))
     }
 
     private func createProductViewModels(with products: ProductList) -> [ProductViewModel] {
@@ -122,15 +122,5 @@ extension HomeViewController: HomeBusinessDelegate {
     func abortWithError(error: Error) {
         coordinator?.hideLoadingView()
         print(error)
-    }
-}
-
-class ProductDetailViewController: UIViewController {
-
-    var coordinator: CoordinatorProtocol?
-
-    convenience init(coordinator: CoordinatorProtocol) {
-        self.init()
-        self.coordinator = coordinator
     }
 }

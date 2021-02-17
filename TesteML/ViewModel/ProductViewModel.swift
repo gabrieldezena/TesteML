@@ -60,7 +60,7 @@ class ProductViewModel {
     lazy var seller: String = {
         if let seller = product.seller.permalink.split(separator: "/", omittingEmptySubsequences: false).last {
             let sellerName = seller.replacingOccurrences(of: "+", with: " ")
-            return String(sellerName)
+            return "VENDEDOR: \(sellerName)"
         }
         return String()
     }()

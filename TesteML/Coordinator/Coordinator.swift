@@ -15,7 +15,7 @@ protocol CoordinatorProtocol {
 }
 
 enum Controller<T> {
-    case productDetail
+    case productDetail(product: ProductViewModel)
 }
 
 class Coordinator: CoordinatorProtocol {
@@ -32,8 +32,8 @@ class Coordinator: CoordinatorProtocol {
 
     func go(to controller: Controller<UIViewController>) {
         switch controller {
-        case .productDetail:
-            viewController = ProductDetailViewController(coordinator: self)
+        case .productDetail(let product):
+            viewController = ProductDetailViewController(coordinator: self, product: product)
         }
         mainNavigationController.pushViewController(viewController, animated: true)
     }
