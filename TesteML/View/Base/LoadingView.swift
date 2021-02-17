@@ -9,7 +9,7 @@ import UIKit
 
 class LoadingView: UIView {
     
-    // MARK: - Private
+    // MARK: - Views
     
     private let activityIndicator = UIActivityIndicatorView()
     

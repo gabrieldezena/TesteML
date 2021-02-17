@@ -10,7 +10,7 @@ import UIKit
 
 class HomeView: UIView {
     
-    // MARK: - Properties
+    // MARK: - Constants
 
     private let productCellId = "ProductCellId"
 

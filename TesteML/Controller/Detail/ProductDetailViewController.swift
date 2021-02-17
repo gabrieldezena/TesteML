@@ -9,13 +9,19 @@ import UIKit
 
 class ProductDetailViewController: UIViewController {
 
+    // MARK: - Properties
+
     var coordinator: CoordinatorProtocol?
     var product: ProductViewModel?
     
+    // MARK: - Views
+
     lazy var productDetailView: ProductDetailView = {
         let view = ProductDetailView()
         return view
     }()
+
+    // MARK: - Inits
 
     convenience init(coordinator: CoordinatorProtocol, product: ProductViewModel) {
         self.init()
@@ -23,10 +29,14 @@ class ProductDetailViewController: UIViewController {
         self.product = product
     }
     
+    // MARK: - Overrides
+
     override func viewDidLoad() {
         self.setupView()
     }
     
+    // MARK: - Private functions
+
     private func setupView() {
         view.backgroundColor = .white
         self.view = productDetailView

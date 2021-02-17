@@ -21,9 +21,13 @@ enum Controller<T> {
 
 class Coordinator: CoordinatorProtocol {
     
+    // MARK: - Properties
+    
     private let loadingView = LoadingView()
     private var viewController = UIViewController()
     private var mainNavigationController = UINavigationController()
+    
+    // MARK: - Functions
 
     func startViewController() -> UINavigationController {
         viewController = HomeViewController(coordinator: self)

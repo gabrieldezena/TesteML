@@ -9,14 +9,20 @@ import UIKit
 
 class ErrorViewController: UIViewController {
     
+    // MARK: - Properties
+
     var errorViewModel: ErrorViewModel?
     var coordinator: CoordinatorProtocol?
+    
+    // MARK: - View
 
     lazy var errorView: ErrorView = {
         guard let error = errorViewModel else { return  ErrorView() }
         let view = ErrorView(delegate: self, errorViewModel: error)
         return view
     }()
+    
+    // MARK: - Inits
 
     convenience init(coordinator: Coordinator, errorViewModel: ErrorViewModel) {
         self.init()
@@ -24,9 +30,13 @@ class ErrorViewController: UIViewController {
         self.coordinator = coordinator
     }
     
+    // MARK: - Overrides
+    
     override func viewDidLoad() {
         setupView()
     }
+    
+    // MARK: - Private functions
     
     private func setupView() {
         self.view = errorView

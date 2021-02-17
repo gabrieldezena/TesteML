@@ -9,12 +9,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    // MARK: - Properties
+    
     private lazy var business = HomeBusiness(delegate: self)
     private var coordinator: CoordinatorProtocol?
-    private var params: [String: Any] = ["limit": 50,
-                                         "offset": 0]
+    private var searchController: UISearchController?
+    
     let productCellId = "ProductCellId"
-    var searchController: UISearchController?
     var products: [ProductViewModel] = [] {
         didSet {
             homeView.productsTableView.layoutIfNeeded()
@@ -22,16 +23,22 @@ class HomeViewController: UIViewController {
             homeView.updateConstraints()
         }
     }
+    
+    // MARK: - Views
 
     lazy var homeView: HomeView = {
         let view = HomeView()
         return view
     }()
 
+    // MARK: - Inits
+    
     convenience init(coordinator: CoordinatorProtocol) {
         self.init()
         self.coordinator = coordinator
     }
+    
+    // MARK: - Overrides
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +53,14 @@ class HomeViewController: UIViewController {
         }
     }
     
+    // MARK: - Public functions
+    
+    func didSelect(product: ProductViewModel) {
+        coordinator?.go(to: .productDetail(product: product))
+    }
+    
+    // MARK: - Private functions
+
     private func setupView() {
         view.backgroundColor = .white
         self.view = homeView
@@ -59,12 +74,12 @@ class HomeViewController: UIViewController {
         searchController?.delegate = self
         searchController?.searchResultsUpdater = self
 
-        let scb = self.searchController?.searchBar
-        scb?.placeholder = "Buscar"
-        scb?.delegate = self
-        scb?.backgroundColor = .yellow
+        let searchBar = self.searchController?.searchBar
+        searchBar?.placeholder = "Buscar"
+        searchBar?.delegate = self
+        searchBar?.backgroundColor = .yellow
 
-        if let textfield = scb?.value(forKey: "searchField") as? UITextField {
+        if let textfield = searchBar?.value(forKey: "searchField") as? UITextField {
             if let backgroundview = textfield.subviews.first {
                 backgroundview.backgroundColor = UIColor.white
                 backgroundview.layer.cornerRadius = 10
@@ -81,10 +96,6 @@ class HomeViewController: UIViewController {
             searchController?.searchBar.barTintColor = UIColor.green
         }
         definesPresentationContext = true
-    }
-
-    func didSelect(product: ProductViewModel) {
-        coordinator?.go(to: .productDetail(product: product))
     }
 
     private func createProductViewModels(with products: ProductList) -> [ProductViewModel] {
@@ -108,7 +119,7 @@ extension HomeViewController: UISearchControllerDelegate, UISearchBarDelegate, U
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchController?.dismiss(animated: true, completion: nil)
         coordinator?.showLoadingView()
-        business.fetchProducts(params: params, product: searchBar.text ?? String())
+        business.fetchProducts(product: searchBar.text ?? String())
     }
 }
 

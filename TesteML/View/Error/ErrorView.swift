@@ -14,8 +14,12 @@ protocol ErrorDelegate: AnyObject {
 
 class ErrorView: UIView {
     
+    // MARK: - Properties
+    
     private weak var delegate: ErrorDelegate?
     
+    // MARK: - Views
+
     lazy var contentView: UIView = {
         let view = UIView(frame: .zero)
         return view
@@ -62,6 +66,8 @@ class ErrorView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - Private functions
 
     private func fillView(errorViewModel: ErrorViewModel) {
         title.text = errorViewModel.title
@@ -86,9 +92,11 @@ extension ErrorView: CodeView {
     
     func setupConstraints() {
     
+        let grid = 8
+        
         closeButton.snp.makeConstraints { make in
-            make.right.equalToSuperview().inset(16)
-            make.top.equalToSuperview().offset(48)
+            make.right.equalToSuperview().inset(grid * 2)
+            make.top.equalToSuperview().offset(grid * 6)
             make.width.height.equalTo(24)
         }
 
@@ -105,16 +113,16 @@ extension ErrorView: CodeView {
         }
         
         title.snp.makeConstraints { make in
-            make.top.equalTo(image.snp.bottom).offset(32)
-            make.left.equalToSuperview().offset(24)
-            make.right.equalToSuperview().inset(16)
+            make.top.equalTo(image.snp.bottom).offset(grid * 4)
+            make.left.equalToSuperview().offset(grid * 3)
+            make.right.equalToSuperview().inset(grid * 2)
         }
 
         subtitle.snp.makeConstraints { make in
-            make.top.equalTo(title.snp.bottom).offset(16)
-            make.left.equalToSuperview().offset(24)
-            make.right.equalToSuperview().inset(16)
-            make.bottom.equalToSuperview().inset(24)
+            make.top.equalTo(title.snp.bottom).offset(grid * 2)
+            make.left.equalToSuperview().offset(grid * 3)
+            make.right.equalToSuperview().inset(grid * 2)
+            make.bottom.equalToSuperview().inset(grid * 3)
         }
     }
 }

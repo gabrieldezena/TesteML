@@ -21,16 +21,16 @@ enum MLError: Error {
 typealias CompletionCallBack = (Result<String?, Any>) -> Void
 
 protocol ApiProviderDelegate: AnyObject {
-    func fetchProducts(params: [String: Any], product: String, completion: @escaping CompletionCallBack)
+    func fetchProducts(product: String, completion: @escaping CompletionCallBack)
 }
 
 class ApiProvider: ApiProviderDelegate {
 
-    func fetchProducts(params: [String: Any], product: String, completion: @escaping CompletionCallBack) {
+    func fetchProducts(product: String, completion: @escaping CompletionCallBack) {
         let urlString = "https://api.mercadolibre.com/sites/MLB/search?q=\(product)"
         if let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),let url = URL(string: encoded) {
 
-            AF.request(url, method: .get, parameters: params).validate().responseJSON { result in
+            AF.request(url, method: .get).validate().responseJSON { result in
                completion(self.handleResult(result: result))
             }
         }

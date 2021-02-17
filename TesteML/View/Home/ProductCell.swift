@@ -49,9 +49,6 @@ class ProductCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    // MARK: - Functions
-
 }
 
 extension ProductCell: CodeView {
@@ -60,7 +57,6 @@ extension ProductCell: CodeView {
         addSubview(title)
         addSubview(price)
         addSubview(shipping)
-        
     }
 
     func setupConstraints() {

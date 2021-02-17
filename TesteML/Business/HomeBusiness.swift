@@ -14,16 +14,22 @@ protocol HomeBusinessDelegate: AnyObject {
 
 class HomeBusiness {
     
+    // MARK: - Properties
+    
     private weak var delegate: HomeBusinessDelegate?
     private var provider: ApiProviderDelegate?
     
+    // MARK: - Init
+
     init(delegate: HomeBusinessDelegate, provider: ApiProviderDelegate = ApiProvider()) {
         self.delegate = delegate
         self.provider = provider
     }
     
-    func fetchProducts(params: [String: Any], product: String) {
-        provider?.fetchProducts(params: params, product: product, completion: { result in
+    // MARK: - Functions
+    
+    func fetchProducts(product: String) {
+        provider?.fetchProducts(product: product, completion: { result in
             switch result {
             case let .success(data):
                 guard let jsonData = data else { return }
