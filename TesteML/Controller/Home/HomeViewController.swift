@@ -11,15 +11,15 @@ class HomeViewController: UIViewController {
     
     private lazy var business = HomeBusiness(delegate: self)
     private var coordinator: CoordinatorProtocol?
-    var searchController: UISearchController?
+    private var params: [String: Any] = ["limit": 50,
+                                         "offset": 0]
     let productCellId = "ProductCellId"
-
+    var searchController: UISearchController?
     var products: [ProductViewModel] = [] {
         didSet {
-            homeView.productsTableView.reloadData()
             homeView.productsTableView.layoutIfNeeded()
+            homeView.productsTableView.reloadData()
             homeView.updateConstraints()
-
         }
     }
 
@@ -54,15 +54,17 @@ class HomeViewController: UIViewController {
     }
     
     private func setupSearchBar() {
+        self.navigationController?.navigationBar.barTintColor = .yellow
         searchController = UISearchController(searchResultsController: nil)
         searchController?.delegate = self
+        searchController?.searchResultsUpdater = self
 
         let scb = self.searchController?.searchBar
         scb?.placeholder = "Buscar"
         scb?.delegate = self
+        scb?.backgroundColor = .yellow
 
         if let textfield = scb?.value(forKey: "searchField") as? UITextField {
-            textfield.textColor = UIColor.green
             if let backgroundview = textfield.subviews.first {
                 backgroundview.backgroundColor = UIColor.white
                 backgroundview.layer.cornerRadius = 10
@@ -95,22 +97,30 @@ class HomeViewController: UIViewController {
     }
 }
 
-extension HomeViewController: UISearchControllerDelegate, UISearchBarDelegate {
+extension HomeViewController: UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if self.products.count > 0 {
+            self.products.removeAll()
+            homeView.productsTableView.reloadData()
+        }
+    }
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchController?.dismiss(animated: true, completion: nil)
         coordinator?.showLoadingView()
-        business.fetchProducts(product: searchBar.text ?? String())
+        business.fetchProducts(params: params, product: searchBar.text ?? String())
     }
 }
 
 extension HomeViewController: HomeBusinessDelegate {
     func successFetchProducts(products: ProductList) {
+        coordinator?.hideLoadingView()
         let productsViewModal = createProductViewModels(with: products)
         self.products = productsViewModal
-        coordinator?.hideLoadingView()
     }
 
     func abortWithError(error: Error) {
+        coordinator?.hideLoadingView()
         print(error)
     }
 }
@@ -124,4 +134,3 @@ class ProductDetailViewController: UIViewController {
         self.coordinator = coordinator
     }
 }
-

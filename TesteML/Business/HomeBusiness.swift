@@ -22,11 +22,11 @@ class HomeBusiness {
         self.provider = provider
     }
     
-    func fetchProducts(product: String) {
-        provider?.fetchProducts(product: product, completion: { result in
+    func fetchProducts(params: [String: Any], product: String) {
+        provider?.fetchProducts(params: params, product: product, completion: { result in
             switch result {
             case let .success(_, data):
-                guard let jsonData = data as? Data else { return }
+                guard let jsonData = data else { return }
                 if let products = try? JSONDecoder().decode(ProductList.self, from: jsonData) {
                     if products.results.isEmpty {
                         print("Nenhum produto encontrado")

@@ -8,6 +8,7 @@
 import Foundation
 
 struct ProductList: Codable {
+    let paging: Paging
     let results: [Product]
 }
 
@@ -30,4 +31,9 @@ struct Seller: Codable {
 
 struct Shipping: Codable {
     let free_shipping: Bool
+}
+
+struct Paging: Codable {
+    let total: Int
+    let offset: Int
 }

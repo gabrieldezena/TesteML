@@ -9,29 +9,29 @@ import Foundation
 import Alamofire
 
 public enum Result<String, T> {
-    case success(String?, T)
+    case success(String?, Data?)
     case error(String?, Error)
 }
 
 typealias CompletionCallBack = (Result<String?, Any>) -> Void
 
 protocol ApiProviderDelegate: AnyObject {
-    func fetchProducts(product: String, completion: @escaping CompletionCallBack)
+    func fetchProducts(params: [String: Any], product: String, completion: @escaping CompletionCallBack)
 }
 
 class ApiProvider: ApiProviderDelegate {
 
-    func fetchProducts(product: String, completion: @escaping CompletionCallBack) {
+    func fetchProducts(params: [String: Any], product: String, completion: @escaping CompletionCallBack) {
         let urlString = "https://api.mercadolibre.com/sites/MLB/search?q=\(product)"
         if let encoded = urlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed),let url = URL(string: encoded) {
-            AF.request(url).validate().responseJSON { (result) in
+
+            AF.request(url, method: .get, parameters: params).validate().responseJSON { (result) in
                 if result.error != nil {
-                    print("Error: \(result.error)")
+                    print("Error: \(String(describing: result.error))")
                 } else {
                     completion(.success(nil, result.data))
                 }
             }
         }
     }
-    
 }

@@ -21,16 +21,20 @@ class ProductCell: UITableViewCell {
     lazy var title: UILabel = {
         let label = UILabel(frame: .zero)
         label.numberOfLines = 2
+        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var price: UILabel = {
         let label = UILabel(frame: .zero)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         return label
     }()
     
     lazy var shipping: UILabel = {
         let label = UILabel(frame: .zero)
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .systemGreen
         return label
     }()
 

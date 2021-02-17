@@ -6,6 +6,7 @@ target 'TesteML' do
   use_frameworks!
   pod 'SnapKit'
   pod 'Alamofire'
+  pod 'Kingfisher'
 
   # Pods for TesteML
   target 'TesteMLTests' do

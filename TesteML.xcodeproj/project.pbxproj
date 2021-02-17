@@ -10,7 +10,6 @@
 		15144B1625D1D2A1003348CF /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15144B1525D1D2A1003348CF /* ProductViewModel.swift */; };
 		15AADBE325DC2A0D00D0793A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AADBE225DC2A0D00D0793A /* LoadingView.swift */; };
 		15AADBE925DC2A9E00D0793A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AADBE825DC2A9E00D0793A /* Coordinator.swift */; };
-		15AADBF225DC2BB700D0793A /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AADBF125DC2BB700D0793A /* UIImageViewExtension.swift */; };
 		15E28B3C25CF453F00D5C76A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E28B3B25CF453F00D5C76A /* AppDelegate.swift */; };
 		15E28B4325CF453F00D5C76A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E28B4125CF453F00D5C76A /* Main.storyboard */; };
 		15E28B4525CF454200D5C76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15E28B4425CF454200D5C76A /* Assets.xcassets */; };
@@ -51,7 +50,6 @@
 		15144B1525D1D2A1003348CF /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
 		15AADBE225DC2A0D00D0793A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		15AADBE825DC2A9E00D0793A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		15AADBF125DC2BB700D0793A /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		15E28B3825CF453F00D5C76A /* TesteML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TesteML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E28B3B25CF453F00D5C76A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15E28B4225CF453F00D5C76A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,14 +148,6 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		15AADBF025DC2B7C00D0793A /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				15AADBF125DC2BB700D0793A /* UIImageViewExtension.swift */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
 		15E28B2F25CF453F00D5C76A = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +173,6 @@
 		15E28B3A25CF453F00D5C76A /* TesteML */ = {
 			isa = PBXGroup;
 			children = (
-				15AADBF025DC2B7C00D0793A /* Util */,
 				15F4ED3625D1F26B0003922F /* Model */,
 				15144B1425D1D271003348CF /* ViewModel */,
 				15E28B8F25CF6F9400D5C76A /* View */,
@@ -530,7 +519,6 @@
 				15AADBE325DC2A0D00D0793A /* LoadingView.swift in Sources */,
 				15E28B9B25CF700F00D5C76A /* HomeView.swift in Sources */,
 				15E28BA325CF706A00D5C76A /* ProductCell.swift in Sources */,
-				15AADBF225DC2BB700D0793A /* UIImageViewExtension.swift in Sources */,
 				15E28B3C25CF453F00D5C76A /* AppDelegate.swift in Sources */,
 				15F4ED4125D1F6670003922F /* ApiProvider.swift in Sources */,
 				15AADBE925DC2A9E00D0793A /* Coordinator.swift in Sources */,

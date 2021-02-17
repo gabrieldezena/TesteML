@@ -29,7 +29,8 @@ class HomeView: UIView {
 
     lazy var productsTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 120
+        tableView.estimatedRowHeight = 120  
         tableView.isScrollEnabled = false
         tableView.backgroundColor = .white
         tableView.separatorColor = .gray
@@ -74,6 +75,8 @@ extension HomeView: CodeView {
     
     func setupConstraints() {
         
+        let grid = 8
+        
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -83,9 +86,11 @@ extension HomeView: CodeView {
             make.width.equalToSuperview()
             make.height.equalToSuperview().priority(250)
         }
-    
+
         productsTableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.left.right.equalToSuperview()
+            make.top.equalToSuperview().offset(grid)
+            make.bottom.equalToSuperview().inset(grid)
             make.height.equalTo(0)
         }
     }
