@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		15144B1625D1D2A1003348CF /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15144B1525D1D2A1003348CF /* ProductViewModel.swift */; };
+		15649F4825DD86CA00ED5407 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15649F4725DD86CA00ED5407 /* ErrorViewModel.swift */; };
+		15649F5025DD86E200ED5407 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15649F4F25DD86E200ED5407 /* ErrorView.swift */; };
+		15649F5525DD8E5800ED5407 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15649F5425DD8E5800ED5407 /* ErrorViewController.swift */; };
 		15AADBE325DC2A0D00D0793A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AADBE225DC2A0D00D0793A /* LoadingView.swift */; };
 		15AADBE925DC2A9E00D0793A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AADBE825DC2A9E00D0793A /* Coordinator.swift */; };
 		15AADC1225DC996600D0793A /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AADC1125DC996600D0793A /* ProductDetailViewController.swift */; };
@@ -50,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		15144B1525D1D2A1003348CF /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		15649F4725DD86CA00ED5407 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
+		15649F4F25DD86E200ED5407 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		15649F5425DD8E5800ED5407 /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		15AADBE225DC2A0D00D0793A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		15AADBE825DC2A9E00D0793A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		15AADC1125DC996600D0793A /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
@@ -140,8 +146,25 @@
 			isa = PBXGroup;
 			children = (
 				15144B1525D1D2A1003348CF /* ProductViewModel.swift */,
+				15649F4725DD86CA00ED5407 /* ErrorViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		15649F4625DD869800ED5407 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				15649F4F25DD86E200ED5407 /* ErrorView.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		15649F5925DD8E5D00ED5407 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				15649F5425DD8E5800ED5407 /* ErrorViewController.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		15AADBE725DC2A7100D0793A /* Coordinator */ = {
@@ -230,6 +253,7 @@
 		15E28B8F25CF6F9400D5C76A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				15649F4625DD869800ED5407 /* Error */,
 				15E28B9025CF6FAA00D5C76A /* Base */,
 				15E28B9925CF6FE900D5C76A /* Home */,
 				15AADC1925DC998200D0793A /* Detail */,
@@ -258,6 +282,7 @@
 		15E28BAF25CF711200D5C76A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				15649F5925DD8E5D00ED5407 /* Error */,
 				15E28BB025CF712E00D5C76A /* Home */,
 				15AADC1025DC993D00D0793A /* Detail */,
 			);
@@ -544,11 +569,14 @@
 				15E28B9B25CF700F00D5C76A /* HomeView.swift in Sources */,
 				15E28BA325CF706A00D5C76A /* ProductCell.swift in Sources */,
 				15E28B3C25CF453F00D5C76A /* AppDelegate.swift in Sources */,
+				15649F4825DD86CA00ED5407 /* ErrorViewModel.swift in Sources */,
 				15F4ED4125D1F6670003922F /* ApiProvider.swift in Sources */,
 				15AADBE925DC2A9E00D0793A /* Coordinator.swift in Sources */,
 				15E28BB225CF714900D5C76A /* HomeViewController.swift in Sources */,
 				15F4ED4A25D1FBEC0003922F /* HomeBusiness.swift in Sources */,
 				15E28BBA25CF71E700D5C76A /* ProductsDataSource.swift in Sources */,
+				15649F5525DD8E5800ED5407 /* ErrorViewController.swift in Sources */,
+				15649F5025DD86E200ED5407 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

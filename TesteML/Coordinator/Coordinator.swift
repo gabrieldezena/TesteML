@@ -16,6 +16,7 @@ protocol CoordinatorProtocol {
 
 enum Controller<T> {
     case productDetail(product: ProductViewModel)
+    case errorView(error: ErrorViewModel)
 }
 
 class Coordinator: CoordinatorProtocol {
@@ -34,10 +35,13 @@ class Coordinator: CoordinatorProtocol {
         switch controller {
         case .productDetail(let product):
             viewController = ProductDetailViewController(coordinator: self, product: product)
+            mainNavigationController.pushViewController(viewController, animated: true)
+        case .errorView(let error):
+            viewController = ErrorViewController(coordinator: self, errorViewModel: error)
+            mainNavigationController.topViewController?.present(viewController, animated: true)
         }
-        mainNavigationController.pushViewController(viewController, animated: true)
     }
-    
+
     func showLoadingView() {
         guard let controller = mainNavigationController.topViewController else { return }
         loadingView.showActivityIndicatory(viewController: controller)

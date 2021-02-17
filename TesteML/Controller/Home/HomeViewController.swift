@@ -120,7 +120,9 @@ extension HomeViewController: HomeBusinessDelegate {
     }
 
     func abortWithError(error: Error) {
+        guard let error = error as? MLError else { return }
+        let errorViewModel = ErrorViewModel(mlError: error)
         coordinator?.hideLoadingView()
-        print(error)
+        coordinator?.go(to: .errorView(error: errorViewModel))
     }
 }
