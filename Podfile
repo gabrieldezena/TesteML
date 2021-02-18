@@ -11,7 +11,9 @@ target 'TesteML' do
   # Pods for TesteML
   target 'TesteMLTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Nimble-Snapshots'
+    pod 'Nimble'
+    pod 'Quick'
   end
 
   target 'TesteMLUITests' do

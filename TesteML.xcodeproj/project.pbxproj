@@ -378,6 +378,7 @@
 				15E28B4A25CF454200D5C76A /* Sources */,
 				15E28B4B25CF454200D5C76A /* Frameworks */,
 				15E28B4C25CF454200D5C76A /* Resources */,
+				BAB4B6BCAB70D3EC9C5F3A8D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -564,6 +565,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TesteML-TesteMLUITests/Pods-TesteML-TesteMLUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAB4B6BCAB70D3EC9C5F3A8D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TesteMLTests/Pods-TesteMLTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TesteMLTests/Pods-TesteMLTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TesteMLTests/Pods-TesteMLTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C981E028E6255A4580F419A4 /* [CP] Embed Pods Frameworks */ = {
