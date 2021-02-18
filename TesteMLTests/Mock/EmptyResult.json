@@ -1,0 +1,705 @@
+{
+  "site_id": "MLA",
+  "query": "Motorola G6",
+  "paging": {
+    "total": 622,
+    "primary_results": 1000,
+    "offset": 0,
+    "limit": 2
+  },
+  "results": [],
+  "secondary_results": [
+  ],
+  "related_results": [
+  ],
+  "sort": {
+    "id": "relevance",
+    "name": "More relevant"
+  },
+  "available_sorts": [
+    {
+      "id": "price_asc",
+      "name": "Lower price"
+    },
+    {
+      "id": "price_desc",
+      "name": "Higher price"
+    }
+  ],
+  "filters": [
+    {
+      "id": "category",
+      "name": "Categories",
+      "type": "text",
+      "values": [
+        {
+          "id": "MLA1055",
+          "name": "Celulares y Smartphones",
+          "path_from_root": [
+            {
+              "id": "MLA1051",
+              "name": "Celulares y Teléfonos"
+            },
+            {
+              "id": "MLA1055",
+              "name": "Celulares y Smartphones"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BRAND",
+      "name": "Marca",
+      "type": "STRING",
+      "values": [
+        {
+          "id": "2503",
+          "name": "Motorola"
+        }
+      ]
+    },
+    {
+      "id": "MOBILE_NETWORK",
+      "name": "Red",
+      "type": "STRING",
+      "values": [
+        {
+          "id": "367876",
+          "name": "4G/LTE"
+        }
+      ]
+    },
+    {
+      "id": "OPERATING_SYSTEM_NAME",
+      "name": "Nombre del sistema operativo",
+      "type": "STRING",
+      "values": [
+        {
+          "id": "7403813",
+          "name": "Android"
+        }
+      ]
+    }
+  ],
+  "available_filters": [
+    {
+      "id": "official_store",
+      "name": "Tiendas oficiales",
+      "type": "text",
+      "values": [
+        {
+          "id": "all",
+          "name": "Todas las tiendas oficiales",
+          "results": 1
+        },
+        {
+          "id": "2227",
+          "name": "PEROZZI E HIJO",
+          "results": 1
+        }
+      ]
+    },
+    {
+      "id": "discount",
+      "name": "Descuentos",
+      "type": "range",
+      "values": [
+        {
+          "id": "5-100",
+          "name": "Desde 5% OFF",
+          "results": 4
+        },
+        {
+          "id": "25-100",
+          "name": "Desde 25% OFF",
+          "results": 2
+        },
+        {
+          "id": "30-100",
+          "name": "Desde 30% OFF",
+          "results": 1
+        }
+      ]
+    },
+    {
+      "id": "state",
+      "name": "Location",
+      "type": "text",
+      "values": [
+        {
+          "id": "TUxBUENBUGw3M2E1",
+          "name": "Capital Federal",
+          "results": 160
+        },
+        {
+          "id": "TUxBUEdSQXJlMDNm",
+          "name": "Bs.As. G.B.A. Sur",
+          "results": 93
+        },
+        {
+          "id": "TUxBUEdSQWVmNTVm",
+          "name": "Bs.As. G.B.A. Oeste",
+          "results": 77
+        },
+        {
+          "id": "TUxBUEdSQWU4ZDkz",
+          "name": "Bs.As. G.B.A. Norte",
+          "results": 59
+        },
+        {
+          "id": "TUxBUENPUmFkZGIw",
+          "name": "Córdoba",
+          "results": 51
+        },
+        {
+          "id": "TUxBUFpPTmFpbnRl",
+          "name": "Buenos Aires Interior",
+          "results": 34
+        },
+        {
+          "id": "TUxBUFNBTmU5Nzk2",
+          "name": "Santa Fe",
+          "results": 23
+        },
+        {
+          "id": "TUxBUE1FTmE5OWQ4",
+          "name": "Mendoza",
+          "results": 13
+        },
+        {
+          "id": "TUxBUENPU2ExMmFkMw",
+          "name": "Bs.As. Costa Atlántica",
+          "results": 10
+        },
+        {
+          "id": "TUxBUFNBTnM0ZTcz",
+          "name": "San Luis",
+          "results": 10
+        },
+        {
+          "id": "TUxBUEVOVHMzNTdm",
+          "name": "Entre Ríos",
+          "results": 9
+        },
+        {
+          "id": "TUxBUENPUnM5MjI0",
+          "name": "Corrientes",
+          "results": 7
+        },
+        {
+          "id": "TUxBUFNBTGFjMTJi",
+          "name": "Salta",
+          "results": 7
+        },
+        {
+          "id": "TUxBUFRVQ244NmM3",
+          "name": "Tucumán",
+          "results": 7
+        },
+        {
+          "id": "TUxBUFLNT29iZmZm",
+          "name": "Río Negro",
+          "results": 5
+        },
+        {
+          "id": "TUxBUFNBTm5lYjU4",
+          "name": "San Juan",
+          "results": 5
+        },
+        {
+          "id": "TUxBUE1JU3MzNjIx",
+          "name": "Misiones",
+          "results": 4
+        },
+        {
+          "id": "TUxBUENIQW8xMTNhOA",
+          "name": "Chaco",
+          "results": 3
+        },
+        {
+          "id": "TUxBUENIVXQxNDM1MQ",
+          "name": "Chubut",
+          "results": 3
+        },
+        {
+          "id": "TUxBUFNBTm9lOTlk",
+          "name": "Santiago del Estero",
+          "results": 3
+        },
+        {
+          "id": "TUxBUE5FVW4xMzMzNQ",
+          "name": "Neuquén",
+          "results": 2
+        },
+        {
+          "id": "TUxBUEpVSnk3YmUz",
+          "name": "Jujuy",
+          "results": 2
+        },
+        {
+          "id": "TUxBUExBWmE1OWMy",
+          "name": "La Pampa",
+          "results": 2
+        },
+        {
+          "id": "TUxBUExBWmEyNzY0",
+          "name": "La Rioja",
+          "results": 2
+        },
+        {
+          "id": "TUxBUFNBTno3ZmY5",
+          "name": "Santa Cruz",
+          "results": 2
+        },
+        {
+          "id": "TUxBUENBVGFiY2Fm",
+          "name": "Catamarca",
+          "results": 1
+        }
+      ]
+    },
+    {
+      "id": "price",
+      "name": "Precio",
+      "type": "range",
+      "values": [
+        {
+          "id": "*-15000.0",
+          "name": "Up to $15.000",
+          "results": 107
+        },
+        {
+          "id": "15000.0-20000.0",
+          "name": "$15.000 to $20.000",
+          "results": 175
+        },
+        {
+          "id": "20000.0-*",
+          "name": "More than $20.000",
+          "results": 334
+        }
+      ]
+    },
+    {
+      "id": "accepts_mercadopago",
+      "name": "MercadoPago filter",
+      "type": "boolean",
+      "values": [
+        {
+          "id": "yes",
+          "name": "With MercadoPago",
+          "results": 616
+        }
+      ]
+    },
+    {
+      "id": "installments",
+      "name": "Pago",
+      "type": "text",
+      "values": [
+        {
+          "id": "yes",
+          "name": "Installments",
+          "results": 616
+        },
+        {
+          "id": "no_interest",
+          "name": "Sin interés",
+          "results": 50
+        }
+      ]
+    },
+    {
+      "id": "shipping",
+      "name": "Envío",
+      "type": "text",
+      "values": [
+        {
+          "id": "mercadoenvios",
+          "name": "Mercado Envíos",
+          "results": 615
+        }
+      ]
+    },
+    {
+      "id": "power_seller",
+      "name": "Seller quality filter",
+      "type": "boolean",
+      "values": [
+        {
+          "id": "yes",
+          "name": "Best sellers",
+          "results": 19
+        }
+      ]
+    },
+    {
+      "id": "since",
+      "name": "Auction start date filter",
+      "type": "text",
+      "values": [
+        {
+          "id": "today",
+          "name": "Publicados hoy",
+          "results": 15
+        }
+      ]
+    },
+    {
+      "id": "until",
+      "name": "Auction stop filter",
+      "type": "text",
+      "values": [
+        {
+          "id": "today",
+          "name": "Ending today",
+          "results": 6
+        }
+      ]
+    },
+    {
+      "id": "has_video",
+      "name": "Video publications filter",
+      "type": "boolean",
+      "values": [
+        {
+          "id": "yes",
+          "name": "Publications with video",
+          "results": 9
+        }
+      ]
+    },
+    {
+      "id": "has_pictures",
+      "name": "Items with images filter",
+      "type": "boolean",
+      "values": [
+        {
+          "id": "yes",
+          "name": "With pictures",
+          "results": 616
+        }
+      ]
+    },
+    {
+      "id": "price_campaign_id",
+      "name": "Campaña",
+      "type": "number",
+      "values": [
+        {
+          "id": "MLA5455",
+          "name": "MLA5455",
+          "results": 1
+        }
+      ]
+    },
+    {
+      "id": "shipping_cost",
+      "name": "Costo de envío",
+      "type": "text",
+      "values": [
+        {
+          "id": "free",
+          "name": "Gratis",
+          "results": 285
+        }
+      ]
+    },
+    {
+      "id": "CARRIER",
+      "name": "Compañía telefónica",
+      "type": "STRING",
+      "values": [
+        {
+          "id": "298335",
+          "name": "Liberado",
+          "results": 571
+        },
+        {
+          "id": "303170",
+          "name": "Movistar",
+          "results": 19
+        },
+        {
+          "id": "298333",
+          "name": "Claro",
+          "results": 14
+        },
+        {
+          "id": "303171",
+          "name": "Personal",
+          "results": 12
+        }
+      ]
+    },
+    {
+      "id": "INTERNAL_MEMORY",
+      "name": "Memoria interna",
+      "type": "range",
+      "values": [
+        {
+          "id": "(*-64GB)",
+          "name": "Menos de 64 GB",
+          "results": 352
+        },
+        {
+          "id": "[64GB-*)",
+          "name": "64 GB o más",
+          "results": 264
+        }
+      ]
+    },
+    {
+      "id": "IS_DUAL_SIM",
+      "name": "Otras características",
+      "type": "boolean",
+      "values": [
+        {
+          "id": "242085",
+          "name": "Es Dual SIM",
+          "results": 58
+        }
+      ]
+    },
+    {
+      "id": "IS_WATER_RESISTANT",
+      "name": "Otras características",
+      "type": "boolean",
+      "values": [
+        {
+          "id": "242085",
+          "name": "Es resistente al agua",
+          "results": 23
+        }
+      ]
+    },
+    {
+      "id": "ITEM_CONDITION",
+      "name": "Condición",
+      "type": "STRING",
+      "values": [
+        {
+          "id": "2230581",
+          "name": "Usado",
+          "results": 562
+        },
+        {
+          "id": "2230284",
+          "name": "Nuevo",
+          "results": 28
+        },
+        {
+          "id": "2230582",
+          "name": "Reacondicionado",
+          "results": 26
+        }
+      ]
+    },
+    {
+      "id": "LINE",
+      "name": "Línea",
+      "type": "STRING",
+      "values": [
+        {
+          "id": "3073863",
+          "name": "Moto G",
+          "results": 589
+        },
+        {
+          "id": "59187",
+          "name": "Moto",
+          "results": 21
+        },
+        {
+          "id": "975255",
+          "name": "Moto E",
+          "results": 4
+        }
+      ]
+    },
+    {
+      "id": "MAIN_COLOR",
+      "name": "Color principal",
+      "type": "list",
+      "values": [
+        {
+          "id": "2450293",
+          "name": "Azul",
+          "results": 381
+        },
+        {
+          "id": "2450294",
+          "name": "Gris",
+          "results": 65
+        },
+        {
+          "id": "2450289",
+          "name": "Dorado",
+          "results": 39
+        },
+        {
+          "id": "2450295",
+          "name": "Negro",
+          "results": 33
+        },
+        {
+          "id": "2450279",
+          "name": "Índigo",
+          "results": 10
+        },
+        {
+          "id": "2450278",
+          "name": "Celeste",
+          "results": 3
+        },
+        {
+          "id": "2450325",
+          "name": "Azul marino",
+          "results": 1
+        },
+        {
+          "id": "2450303",
+          "name": "Plateado",
+          "results": 1
+        }
+      ]
+    },
+    {
+      "id": "MAIN_REAR_CAMERA_RESOLUTION",
+      "name": "Resolución de la cámara trasera principal",
+      "type": "range",
+      "values": [
+        {
+          "id": "(*-13Mpx)",
+          "name": "13 Mpx o menos",
+          "results": 482
+        },
+        {
+          "id": "[13Mpx-*)",
+          "name": "13 Mpx o más",
+          "results": 134
+        }
+      ]
+    },
+    {
+      "id": "MODEL",
+      "name": "Modelo",
+      "type": "STRING",
+      "values": [
+        {
+          "id": "2915826",
+          "name": "G6 Plus",
+          "results": 219
+        },
+        {
+          "id": "8074",
+          "name": "G6",
+          "results": 210
+        },
+        {
+          "id": "2876818",
+          "name": "G6 Play",
+          "results": 113
+        },
+        {
+          "id": "2815330",
+          "name": "G6 Plus Dual SIM",
+          "results": 24
+        },
+        {
+          "id": "483571",
+          "name": "G6 Dual SIM",
+          "results": 19
+        },
+        {
+          "id": "2876819",
+          "name": "G6 Play Dual SIM",
+          "results": 14
+        },
+        {
+          "id": "7917823",
+          "name": "E5 Play (Go Edition)",
+          "results": 1
+        },
+        {
+          "id": "7867801",
+          "name": "E6 Plus",
+          "results": 1
+        },
+        {
+          "id": "7867798",
+          "name": "E6 Play Dual SIM",
+          "results": 1
+        },
+        {
+          "id": "7867796",
+          "name": "E6 Play",
+          "results": 1
+        },
+        {
+          "id": "3666",
+          "name": "G7",
+          "results": 1
+        }
+      ]
+    },
+    {
+      "id": "RAM",
+      "name": "Memoria RAM",
+      "type": "range",
+      "values": [
+        {
+          "id": "(*-2GB]",
+          "name": "2 GB o menos",
+          "results": 9
+        },
+        {
+          "id": "[3GB-3GB]",
+          "name": "3 GB",
+          "results": 338
+        },
+        {
+          "id": "[4GB-4GB]",
+          "name": "4 GB",
+          "results": 254
+        },
+        {
+          "id": "[6GB-6GB]",
+          "name": "6 GB",
+          "results": 12
+        },
+        {
+          "id": "[8GB-*)",
+          "name": "8 GB o más",
+          "results": 3
+        }
+      ]
+    },
+    {
+      "id": "WITH_FACIAL_RECOGNITION",
+      "name": "Otras características",
+      "type": "boolean",
+      "values": [
+        {
+          "id": "242085",
+          "name": "Con reconocimiento facial",
+          "results": 404
+        }
+      ]
+    },
+    {
+      "id": "WITH_FINGERPRINT_READER",
+      "name": "Otras características",
+      "type": "boolean",
+      "values": [
+        {
+          "id": "242085",
+          "name": "Con lector de huella digital",
+          "results": 615
+        }
+      ]
+    }
+  ]
+}
+

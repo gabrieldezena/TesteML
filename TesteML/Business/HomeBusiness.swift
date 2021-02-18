@@ -39,6 +39,8 @@ class HomeBusiness {
                     } else {
                         self.delegate?.successFetchProducts(products: products)
                     }
+                } else {
+                    self.delegate?.abortWithError(error: MLError.genericError)
                 }
             case let .error(error):
                 self.delegate?.abortWithError(error: error)
