@@ -24,7 +24,7 @@ class ErrorViewController: UIViewController {
     
     // MARK: - Inits
 
-    convenience init(coordinator: Coordinator, errorViewModel: ErrorViewModel) {
+    convenience init(coordinator: CoordinatorProtocol, errorViewModel: ErrorViewModel) {
         self.init()
         self.errorViewModel = errorViewModel
         self.coordinator = coordinator
@@ -36,9 +36,9 @@ class ErrorViewController: UIViewController {
         setupView()
     }
     
-    // MARK: - Private functions
+    // MARK: - functions
     
-    private func setupView() {
+    func setupView() {
         self.view = errorView
         view.backgroundColor = .white
     }
